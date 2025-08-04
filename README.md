@@ -44,7 +44,34 @@ vehicle_counter/
 
 ---
 
-## 🛠️ Build Instructions
+## Techniques Used
+
+    Grayscale conversion
+
+    Background subtraction (MOG2)
+
+    Morphological operations
+
+    Contour extraction
+
+    Shape heuristics (area, aspect ratio, extent, solidity)
+
+    Classical computer vision only — no machine learning
+
+
+## Planned Evaluation Metrics
+
+To be implemented:
+
+    Precision, Recall, F1-score (IoU ≥ 0.5)
+
+    Absolute & Relative vehicle count error
+
+    Per-image result .csv summary
+
+    TP/FP/FN visual overlays
+
+##  Build Instructions
 
 This project uses CMake and requires OpenCV installed on your system.
 
@@ -101,6 +128,20 @@ The next phase involves building an evaluation module that will:
 - Shadow and noise suppression heuristics may require tuning depending on dataset
 
 ---
+
+---
+
+## ⚙️ Build Instructions for Clonning repo
+
+```bash
+# Clone the repository
+git clone https://github.com/Aladra8/vehicle_counter.git
+cd vehicle_counter
+
+# Build the project
+mkdir build && cd build
+cmake ..
+make
 
 ## Author
 
