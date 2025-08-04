@@ -12,24 +12,6 @@ opencv2/opencv.hpp
 vector
 -
 
-/home/aladra/vehicle_counter/main.cpp
-iostream
--
-fstream
--
-string
--
-vector
--
-opencv2/opencv.hpp
--
-detector.hpp
-/home/aladra/vehicle_counter/detector.hpp
-filesystem
--
-experimental/filesystem
--
-
 /home/aladra/vehicle_counter/src/detector.cpp
 detector.hpp
 /home/aladra/vehicle_counter/src/detector.hpp

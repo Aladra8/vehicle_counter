@@ -1,2 +1,0 @@
-Vehicle Count: 0
-Bounding Boxes:

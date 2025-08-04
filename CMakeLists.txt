@@ -5,6 +5,7 @@ project(vehicle_counter)
 set(CMAKE_CXX_STANDARD 17)
 
 find_package(OpenCV REQUIRED)
+find_package(tinyxml2 REQUIRED)
 
 include_directories(include)
 
@@ -15,6 +16,7 @@ add_executable(vehicle_counter
 
 # Link filesystem explicitly (required for GCC < 9)
 target_link_libraries(vehicle_counter ${OpenCV_LIBS} stdc++fs)
+target_link_libraries(vehicle_counter PRIVATE tinyxml2)
 
 # cmake_minimum_required(VERSION 3.10)
 # project(VehicleCounter)
