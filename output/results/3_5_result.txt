@@ -1,0 +1,5 @@
+Vehicle Count: 3
+Bounding Boxes:
+Vehicle 1: x=631, y=288, width=47, height=17
+Vehicle 2: x=266, y=187, width=20, height=16
+Vehicle 3: x=490, y=160, width=24, height=13
