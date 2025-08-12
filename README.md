@@ -46,32 +46,63 @@ vehicle_counter/
 
 ## Techniques Used
 
-    Grayscale conversion
+- Grayscale conversion
+- Background subtraction (MOG2)
+- Morphological operations
+- Contour extraction
+- Shape heuristics (area, aspect ratio, extent, solidity)
+- Classical computer vision only — no machine learning
 
-    Background subtraction (MOG2)
-
-    Morphological operations
-
-    Contour extraction
-
-    Shape heuristics (area, aspect ratio, extent, solidity)
-
-    Classical computer vision only — no machine learning
-
+---
 
 ## Planned Evaluation Metrics
 
 To be implemented:
 
-    Precision, Recall, F1-score (IoU ≥ 0.5)
+- Precision, Recall, F1-score (IoU ≥ 0.5)
+- Absolute & Relative vehicle count error
+- Per-image result .csv summary
+- TP/FP/FN visual overlays
 
-    Absolute & Relative vehicle count error
+---
 
-    Per-image result .csv summary
+## Recent Accomplishments and Improvements
 
-    TP/FP/FN visual overlays
+### Enhanced Vehicle Detection Pipeline
+- **Improved Background Subtraction**: Enhanced MOG2 background subtraction with better parameter tuning for vehicle detection
+- **Advanced Morphological Operations**: Implemented sophisticated morphological filtering including opening, closing, and area-based filtering
+- **Robust Contour Analysis**: Added comprehensive geometric heuristics for vehicle validation:
+  - Area-based filtering with adaptive thresholds
+  - Aspect ratio validation for realistic vehicle proportions
+  - Solidity and extent calculations for shape quality assessment
+  - Minimum bounding rectangle analysis
 
-##  Build Instructions
+### Code Quality Improvements
+- **Modular Architecture**: Refactored code into clean, maintainable classes (`Detector` class)
+- **Comprehensive Debug Output**: Added multi-stage debug visualization:
+  - Grayscale conversion outputs
+  - Foreground mask generation
+  - Post-morphology processing results
+- **Error Handling**: Implemented robust error handling for file operations and image processing
+
+### Performance Optimizations
+- **Efficient Image Processing**: Optimized OpenCV operations for better performance
+- **Memory Management**: Improved memory usage patterns in image processing pipeline
+- **Batch Processing**: Support for processing multiple images with consistent output formatting
+
+### Output and Evaluation Preparation
+- **Structured Results**: Generated standardized output format for each processed image
+- **Debug Visualization**: Created comprehensive debug outputs for algorithm validation
+- **Ground Truth Compatibility**: Prepared output format compatible with Pascal VOC evaluation standards
+
+### Testing and Validation
+- **Multi-Image Testing**: Successfully tested pipeline on various traffic scenarios
+- **Parameter Tuning**: Optimized detection parameters for different lighting and traffic conditions
+- **Quality Assurance**: Implemented validation checks throughout the processing pipeline
+
+---
+
+## Build Instructions
 
 This project uses CMake and requires OpenCV installed on your system.
 
@@ -129,9 +160,7 @@ The next phase involves building an evaluation module that will:
 
 ---
 
----
-
-## ⚙️ Build Instructions for Clonning repo
+## ⚙️ Build Instructions for Cloning repo
 
 ```bash
 # Clone the repository
@@ -142,12 +171,15 @@ cd vehicle_counter
 mkdir build && cd build
 cmake ..
 make
+```
+
+---
 
 ## Author
 
 Developed by 
 Baba Drammeh 
-Gulce 
+Gulce Sirvanci
 University of Padova  
 Computer Vision Project
 
