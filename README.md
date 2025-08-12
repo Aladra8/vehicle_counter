@@ -106,6 +106,7 @@ To be implemented:
 
 This project uses CMake and requires OpenCV installed on your system.
 
+### Option 1: Native Build
 ```bash
 # Create build directory
 mkdir build && cd build
@@ -119,6 +120,20 @@ make
 # Run the executable
 ./vehicle_counter
 ```
+
+### Option 2: Docker (Recommended for easy setup)
+```bash
+# Build Docker image
+docker build -t vehicle-counter .
+
+# Run with Docker Compose
+docker-compose up --build
+
+# Or run manually
+docker run -v $(pwd)/data:/app/data -v $(pwd)/output:/app/output -v $(pwd)/debug_output:/app/debug_output vehicle-counter
+```
+
+**Note**: See `DOCKER_README.md` for detailed Docker instructions.
 
 ---
 
